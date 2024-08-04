@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- Hypercodez  -->
+
+	<div class="container" id="container">
+		<div class="wrapper">
+			<div class="progressbar-container">
+				<div class="progressbar-track">
+					<div id="progressbar"></div>
+					<input type="range" min="0" max="100" value="0" id="progressbar-input">
+				</div>
+			</div>
+			<div class="controller">
+				<div class="left-options options">
+					<div class="option-button">
+						<svg id="play-pause-btn" height="100%" version="1.1" viewBox="0 0 36 36" width="100%" fill="#fff">
+						    <path d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path>
+						</svg>
+					</div>
+					<div class="option-button">
+						<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%" fill="#fff">
+						    <path d="M 12,24 20.5,18 12,12 V 24 z M 22,12 v 12 h 2 V 12 h -2 z"></path>
+						</svg>
+					</div>
+					<div class="volume-container">
+						<div class="option-button">
+							<svg fill="#fff" id="volume-mute-btn" height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+							    <path d="M8,21 L12,21 L17,26 L17,10 L12,15 L8,15 L8,21 Z M19,14 L19,22 C20.48,21.32 21.5,19.77 21.5,18 C21.5,16.26 20.48,14.74 19,14 ZM19,11.29 C21.89,12.15 24,14.83 24,18 C24,21.17 21.89,23.85 19,24.71 L19,26.77 C23.01,25.86 26,22.28 26,18 C26,13.72 23.01,10.14 19,9.23 L19,11.29 Z" fill="#fff"></path>
+							</svg>
+						</div>
+						<input type="range" id="volume-input" min="0" max="1" value="1" step="0.1">
+					</div>
+					<div class="video-timeline">
+						<span id="video-ctime">00:00</span>/
+						<span id="video-duration">00:00</span>
+					</div>
+				</div>
+				<div class="right-options options">
+					<div class="option-button" style="margin-right:5px;">
+						<svg id="playback-options-display-btn" width="100%" height="70%" viewBox="0 0 24 24" fill="#fff">
+						    <path d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C11.1785 22.75 10.3776 22.6577 9.60751 22.4826C9.2036 22.3908 8.95061 21.9889 9.04244 21.585C9.13427 21.1811 9.53614 20.9281 9.94005 21.02C10.6018 21.1704 11.2911 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75C11.2911 2.75 10.6018 2.8296 9.94005 2.98004C9.53614 3.07187 9.13427 2.81888 9.04244 2.41497C8.95061 2.01106 9.2036 1.60919 9.60751 1.51737C10.3776 1.34229 11.1785 1.25 12 1.25Z"/>
+						    <path d="M3.13198 16.6863C3.4825 16.4656 3.94557 16.5708 4.16627 16.9213C4.90623 18.0965 5.90349 19.0938 7.07868 19.8337C7.42919 20.0544 7.53443 20.5175 7.31372 20.868C7.09302 21.2185 6.62995 21.3238 6.27944 21.1031C4.91436 20.2435 3.75646 19.0856 2.89693 17.7206C2.67623 17.37 2.78146 16.907 3.13198 16.6863Z"/>
+						    <path d="M2.98004 9.94005C3.07187 9.53614 2.81888 9.13427 2.41497 9.04244C2.01106 8.95061 1.60919 9.2036 1.51737 9.60751C1.34229 10.3776 1.25 11.1785 1.25 12C1.25 12.8215 1.34229 13.6224 1.51737 14.3925C1.60919 14.7964 2.01106 15.0494 2.41497 14.9576C2.81888 14.8657 3.07187 14.4639 2.98004 14.06C2.8296 13.3982 2.75 12.7089 2.75 12C2.75 11.2911 2.8296 10.6018 2.98004 9.94005Z"/>
+						    <path d="M7.31372 3.13198C7.53443 3.4825 7.42919 3.94557 7.07868 4.16627C5.90349 4.90623 4.90623 5.90349 4.16627 7.07868C3.94556 7.42919 3.4825 7.53443 3.13198 7.31372C2.78146 7.09302 2.67623 6.62995 2.89693 6.27944C3.75646 4.91436 4.91436 3.75646 6.27943 2.89693C6.62995 2.67623 7.09302 2.78146 7.31372 3.13198Z" />
+						    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 9.21272C8.25 7.79022 9.74622 6.72352 11.0748 7.50792L15.795 10.2948C17.0683 11.0466 17.0683 12.9526 15.795 13.7044L11.0748 16.4912C9.74622 17.2756 8.25 16.2089 8.25 14.7864V9.21272ZM9.95947 8.80455C9.84615 8.87541 9.75 9.01424 9.75 9.21272V14.7864C9.75 14.9849 9.84615 15.1237 9.95947 15.1946C10.0691 15.2632 10.1919 15.2706 10.3122 15.1995L15.0324 12.4127C15.165 12.3344 15.25 12.1848 15.25 11.9996C15.25 11.8144 15.165 11.6648 15.0324 11.5864L10.3122 8.79959C10.1919 8.72855 10.0691 8.73597 9.95947 8.80455Z" />
+						</svg>
+						<div id="playback-options">
+							<button class="plackback-option-btn" data-speed=".25">0.25x</button>
+							<button class="plackback-option-btn" data-speed=".5">0.50x</button>
+							<button class="plackback-option-btn" data-speed=".75">0.75x</button>
+							<button class="plackback-option-btn" data-speed="1">Normal</button>
+							<button class="plackback-option-btn" data-speed="1.25">1.25x</button>
+							<button class="plackback-option-btn" data-speed="1.5">1.50</button>
+							<button class="plackback-option-btn" data-speed="1.75">1.75x</button>
+							<button class="plackback-option-btn" data-speed="2">2x</button>
+						</div>
+					</div>
+					<div class="option-button">
+						<svg id="play-in-pip-btn" height="100%" version="1.1" viewBox="0 0 36 36" width="100%" fill="#fff">
+						    <path d="M25,17 L17,17 L17,23 L25,23 L25,17 L25,17 Z M29,25 L29,10.98 C29,9.88 28.1,9 27,9 L9,9 C7.9,9 7,9.88 7,10.98 L7,25 C7,26.1 7.9,27 9,27 L27,27 C28.1,27 29,26.1 29,25 L29,25 Z M27,25.02 L9,25.02 L9,10.97 L27,10.97 L27,25.02 L27,25.02 Z"></path>
+						</svg>
+					</div>
+					<div class="option-button">
+						<svg id="fullscreen-btn" height="100%" version="1.1" viewBox="0 0 36 36" width="100%" fill="#fff">
+						    <path d="m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z"></path>
+						    <path d="m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z"></path>
+						    <path d="m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z"></path>
+						    <path d="M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		<video id="video" src="wildlife.mp4"></video>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
